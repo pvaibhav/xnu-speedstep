@@ -22,7 +22,7 @@ sudo sysctl -w kern.cputhrottle_curfreq=YYYY
 }}}
 (replace YYYY with what you want from the list you got. You can also set a single digit number directly which is the frequency (pstate) number: 0 is highest speed, 1 is next lowest etc.
 
-Similarly for _curvolt. However keep in mind you should not mess with voltages if your processor with factory default voltages performs adequately without overheating.
+Similarly for kern.cputhrottle_curvolt. However keep in mind you should not mess with voltages if your processor with factory default voltages performs adequately without overheating.
 
 ==Getting debug logs and bug reporting==
 To get debug log messages, first edit the Info.plist file inside the kext and set `DebugMessages` to `<true/>`, then unload/reload the kext and type this in Terminal:
