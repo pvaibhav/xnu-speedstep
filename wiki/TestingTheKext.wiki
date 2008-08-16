@@ -1,0 +1,35 @@
+#summary Information on how to test the kext
+#labels Featured,Phase-QA
+
+To see which frequencies are available:
+{{{
+sysctl kern.cputhrottle_freqs
+}}}
+
+To switch frequency:
+{{{
+sudo sysctl -w kern.cputhrottle_curfreq=YYYY
+}}}
+(replace YYYY with what you want from the list you got. You can also set a single digit number directly which is the frequency (pstate) number: 0 is highest speed, 1 is next lowest etc.
+
+What to test -
+
+  # That you can actually switch CPU speed
+  # Whether your timing is stable (ie. OSX UI/animations should be smooth, not stuttering in audio)
+  # Test whether you can still sleep and then resume - if your sleep/resume worked before
+
+_Make sure you unload ACPICPUThrottle.kext and/or AppleIntelCPUPowerManagement.kext before loading this!_
+
+To get debug log messages, first edit the Info.plist file inside the kext and set *DebugMessages* to *true*, then unload/reload the kext and type this in Terminal:
+{{{
+sudo dmesg | grep IntelEnhancedSpeedStep
+}}}
+
+If it doesn't work for you, paste on pastebin the output of the above command, and of
+{{{
+sysctl machdep.cpu && uname -a && sudo dmesg | grep IntelEnhancedSpeedStep
+}}}
+then create a new bug report (Issues tab), and attach the URL of the report along with problem description.
+
+To get information about the current freq/voltage and available freq/voltage, type
+{{{sysctl -a | grep throttle}}}
