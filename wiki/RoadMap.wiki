@@ -1,0 +1,10 @@
+#summary What's in store
+#labels Phase-Design
+
+== Current feature plan ==
+
+  # Implement in-kernel auto-throttle (ref. AutoThrottle)
+  # Add IOUserClient based communication channel for userspace clients - perhaps use Mach RPC or ports instead? sysctl is not suitable for low-latency communication between userspace and kernel.
+  # Add more sysctl variables for information purposes
+  # Add sysctl control to enable/disable DebugMessages mode.
+  # Add sysctl control for KernelFeatures
