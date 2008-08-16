@@ -1,6 +1,14 @@
 #summary Information on how to test the kext
 #labels Featured,Phase-QA
 
+
+==What to test==
+
+  # That you can actually switch CPU speed
+  # Whether your timing is stable (ie. OSX UI/animations should be smooth, not stuttering in audio)
+  # Test whether you can still sleep and then resume - if your sleep/resume worked before
+
+==How to test==
 Most of the testing is done in the command line. There are GUI apps available for regular use, get them from the Downloads page.
 
 To see which frequencies are available:
@@ -14,15 +22,10 @@ sudo sysctl -w kern.cputhrottle_curfreq=YYYY
 }}}
 (replace YYYY with what you want from the list you got. You can also set a single digit number directly which is the frequency (pstate) number: 0 is highest speed, 1 is next lowest etc.
 
-What to test -
+Similarly for _curvolt. However keep in mind you should not mess with voltages if your processor with factory default voltages performs adequately without overheating.
 
-  # That you can actually switch CPU speed
-  # Whether your timing is stable (ie. OSX UI/animations should be smooth, not stuttering in audio)
-  # Test whether you can still sleep and then resume - if your sleep/resume worked before
-
-_Make sure you unload ACPICPUThrottle.kext and/or AppleIntelCPUPowerManagement.kext before loading this!_
-
-To get debug log messages, first edit the Info.plist file inside the kext and set *DebugMessages* to *true*, then unload/reload the kext and type this in Terminal:
+==Getting debug logs and bug reporting==
+To get debug log messages, first edit the Info.plist file inside the kext and set `DebugMessages` to `<true/>`, then unload/reload the kext and type this in Terminal:
 {{{
 sudo dmesg | grep IntelEnhancedSpeedStep
 }}}
