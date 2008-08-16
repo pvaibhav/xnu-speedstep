@@ -1,0 +1,25 @@
+#summary Information about the project's Mercurial repository
+#labels Featured
+
+= Mercurial, not Subversion! =
+
+We use the distributed version control system Mercurial for our source code control instead of svn. Since GoogleCode only supports svn, we use freehg.org to host our sourcecode.
+
+
+= How to get the source =
+
+To simply browse through the source code, go to http://freehg.org/u/mercurysquad/intelenhancedspeedstep/ – The _manifest_ will show you the files in the project which you can browse through.
+
+To download the source code for building yourself, or making changes, you need to install Mercurial. Download Mercurial from here: http://mercurial.berkwood.com/  Once you have it installed, start a terminal, go to the folder where you keep your source code etc. and type:
+
+{{{
+hg clone http://freehg.org/u/mercurysquad/intelenhancedspeedstep
+}}}
+
+This will clone our repository, ready for your to hack on. Once you're done making changes, do: 
+{{{
+hg commit
+hg export tip > filename.diff
+}}}
+
+Then attach it and post here! More info on how to use Mercurial is at http://www.selenic.com/mercurial/wiki/index.cgi/QuickStart
