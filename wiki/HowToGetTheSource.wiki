@@ -1,12 +1,12 @@
 #summary Information about the project's Mercurial repository
 #labels Featured
 
-= Mercurial, not Subversion! =
+== Mercurial, not Subversion! ==
 
 We use the distributed version control system Mercurial for our source code control instead of svn. Since GoogleCode only supports svn, we use freehg.org to host our sourcecode.
 
 
-= How to get the source =
+== How to get the source ==
 
 To simply browse through the source code, go to http://freehg.org/u/mercurysquad/intelenhancedspeedstep/ – The _manifest_ will show you the files in the project which you can browse through.
 
@@ -22,4 +22,4 @@ hg commit
 hg export tip > filename.diff
 }}}
 
-Then attach it and post here! More info on how to use Mercurial is at http://www.selenic.com/mercurial/wiki/index.cgi/QuickStart
+Then attach it and post it to use from the Issues page! More info on how to use Mercurial is at http://www.selenic.com/mercurial/wiki/index.cgi/QuickStart
