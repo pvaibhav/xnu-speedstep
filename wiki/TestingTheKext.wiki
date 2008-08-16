@@ -1,6 +1,8 @@
 #summary Information on how to test the kext
 #labels Featured,Phase-QA
 
+Most of the testing is done in the command line. There are GUI apps available for regular use, get them from the Downloads page.
+
 To see which frequencies are available:
 {{{
 sysctl kern.cputhrottle_freqs
@@ -27,7 +29,7 @@ sudo dmesg | grep IntelEnhancedSpeedStep
 
 If it doesn't work for you, paste on pastebin the output of the above command, and of
 {{{
-sysctl machdep.cpu && uname -a && sudo dmesg | grep IntelEnhancedSpeedStep
+sysctl machdep.cpu && uname -a
 }}}
 then create a new bug report (Issues tab), and attach the URL of the report along with problem description.
 
