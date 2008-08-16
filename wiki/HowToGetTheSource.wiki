@@ -3,7 +3,7 @@
 
 == Mercurial, not Subversion! ==
 
-We use the distributed version control system Mercurial for our source code control instead of svn. Since GoogleCode only supports svn, we use freehg.org to host our sourcecode.
+We use the distributed version control system Mercurial for our source code control instead of svn. Since GoogleCode only supports svn, we use bitbucket.org to host our sourcecode.
 
 
 == How to get the source ==
@@ -26,3 +26,5 @@ hg export tip > filename.diff
 }}}
 
 Then attach it and post it to use from the Issues page! More info on how to use Mercurial is at http://www.selenic.com/mercurial/wiki/index.cgi/QuickStart
+
+*Note*: If after cloning the repository you don't see a proper directory structure (Source, Reference..), try `hg update -C autothrottle-magic`. We are working on that branch currently and will merge it back to default once it's done.
