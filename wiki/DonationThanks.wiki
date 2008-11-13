@@ -1,0 +1,6 @@
+#summary Thanks for donating
+#labels Deprecated,Phase-Support
+
+= Thank you! =
+
+Your contribution towards development is much appreciated!
