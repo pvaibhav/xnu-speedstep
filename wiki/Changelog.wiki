@@ -1,6 +1,15 @@
 #summary Short summary of the major features/fixes in each new release
 #labels Featured,Phase-Implementation
 
+=== 1.4.5 ===
+  * "Error getting PState array from ACPI" - if you get this error with older versions, this new version will try to create a pstate table for you based on some heuristics. It is not optimal, but will give you a headstart. Later you can fine-tune the pstate table yourself.
+  * Info.plist has a new key "TargetCPULoad" currently set to 30%. Change it to whatever you want to be the default.
+  * Should also fix the incorrect (high or -ve) cpu frequency problem.
+
+=== 1.4.0 ===
+  * Auto-throttling support. Read AutoThrottle
+  * Misc. bugfixes.
+
 === 1.3.2 ===
   * fix a bug which displayed incorrect current frequency value when using n/2 bus ratio
 === 1.3.1 ===
