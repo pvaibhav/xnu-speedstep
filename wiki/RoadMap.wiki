@@ -3,8 +3,11 @@
 
 == Current feature plan ==
 
-  # Implement in-kernel auto-throttle (ref. AutoThrottle)
-  # Add IOUserClient based communication channel for userspace clients - perhaps use Mach RPC or ports instead? sysctl is not suitable for low-latency communication between userspace and kernel.
+  # Implement AMD support
+  # ~~Add auto-pstate creation~~
+  # Add sanity check for pstate table returned by ACPI and fall back to auto-pstate if needed
+  # ~~Implement in-kernel auto-throttle~~ (ref. AutoThrottle)
+  # Add IOUserClient based communication channel for userspace clients
   # Add more sysctl variables for information purposes
   # Add sysctl control to enable/disable DebugMessages mode.
   # Add sysctl control for KernelFeatures
