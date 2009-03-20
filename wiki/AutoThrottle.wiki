@@ -24,3 +24,13 @@ sudo sysctl -w kern.cputhrottle_targetload=XY
 where XY is your preferred load in %. You cannot specify more than 95% here.
 
 If you want to change the default CPU load, edit the Info.plist and change the *TargetCPULoad* key to whatever you prefer.
+
+== Latching the CPU speed ==
+
+It is possible to set the CPU speed to a fixed frequency. You might want to do this to reduce heat and power consumption (by latching to lowest freq) or to increase audio/gui performance (by latching to highest frequency). To do this, disable auto-throttle first, and then set to whatever speed you want:
+{{{
+sudo sysctl -w kern.cputhrottle_auto=0
+sudo sysctl -w kern.cputhrottle_freq=XYZ
+}}}
+
+Replace XYZ with the frequency (in MHz) that you want. The kext will choose the closest frequency supported by your processor.
