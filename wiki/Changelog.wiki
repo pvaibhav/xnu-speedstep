@@ -1,6 +1,14 @@
 #summary Short summary of the major features/fixes in each new release
 #labels Featured,Phase-Implementation
 
+=== 1.4.9 ===
+
+  * Fixed panic when trying to automatically create a P-State table on systems with broken ACPI implementation.
+  * Added ability to check for kernel boot flag "-autopstates" to force automatic creation of PState table on any system (useful if Info.plist has incorrect PState table preventing boot up)
+  * Modified auto-throttle algorithm to be more responsive for high-performance tasks
+  * Now waits on IOCPU resource before starting auto-throttle, so that it works when loaded as Root
+  * Set the OSBundleRequired property to Root allowing the kext to load very early in the boot process and also in single-user modes
+
 === 1.4.5 ===
   * "Error getting PState array from ACPI" - if you get this error with older versions, this new version will try to create a pstate table for you based on some heuristics. It is not optimal, but will give you a headstart. Later you can fine-tune the pstate table yourself.
   * Info.plist has a new key "TargetCPULoad" currently set to 30%. Change it to whatever you want to be the default.
